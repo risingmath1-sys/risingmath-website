@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./images/favicon.png">
+    <title>위치및약도 - 상승수학</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container header-container">
+            <!-- Mobile Circular Menu Trigger -->
+            <div class="mobile-menu-container">
+                <button class="menu-toggle" id="mobileMenuTrigger">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+                <div class="circular-menu-items" id="circularMenuItems">
+                    <div class="menu-item" style="--angle: 0; --dist: 90px;">
+                        <a href="director.html">원장<br>직강</a>
+                    </div>
+                    <div class="menu-item" style="--angle: 20; --dist: 95px;">
+                        <a href="nsu.html">재수<br>N수</a>
+                    </div>
+                    <div class="menu-item" style="--angle: 40; --dist: 100px;">
+                        <a href="high.html">고등부</a>
+                    </div>
+                    <div class="menu-item" style="--angle: 60; --dist: 100px;">
+                        <a href="middle.html">중등부</a>
+                    </div>
+                    <div class="menu-item" style="--angle: 80; --dist: 95px;">
+                        <a href="location.html">위치</a>
+                    </div>
+                    <div class="menu-item" style="--angle: 100; --dist: 90px;">
+                        <a href="#" onclick="openPricePopup(); return false;">공지</a>
+                    </div>
+                </div>
+            </div>
+
+            <h1 class="logo">
+                <a href="index.html">
+                    <img src="./images/logo_transparent.png" alt="상승수학">
+                </a>
+            </h1>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Overview</a></li>
+                    <li><a href="director.html">원장직강</a></li>
+                    <li><a href="nsu.html">재수•N수</a></li>
+                    <li><a href="high.html">고등부</a></li>
+                    <li><a href="middle.html">중등부</a></li>
+                    <li><a href="location.html">위치및약도</a></li>
+                    <li><a href="#" onclick="openPricePopup(); return false;">공지사항</a></li>
+                </ul>
+            </nav>
+            <div class="header-utils">
+                <a href="#" class="login-btn">로그인</a>
+            </div>
+        </div>
+        <!-- Mobile Horizontal Scroll Menu -->
+        <nav class="mobile-scroll-nav">
+            <ul>
+                <li><a href="index.html">Overview</a></li>
+                <li><a href="director.html">원장직강</a></li>
+                <li><a href="nsu.html">재수•N수</a></li>
+                <li><a href="high.html">고등부</a></li>
+                <li><a href="middle.html">중등부</a></li>
+                <li><a href="location.html" class="active">위치및약도</a></li>
+                <li><a href="#" onclick="openPricePopup(); return false;">공지사항</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="padding-top: 50px; min-height: 60vh;">
+        <!-- Section 1: Intro & Title -->
+        <section class="section-item bg-white">
+            <div class="container">
+                <div class="section-title-wrapper">
+                    <h2 style="font-size: 32px; font-weight: 700; margin: 0;">위치 및 약도</h2>
+                </div>
+                <div class="content text-container">
+                    <p style="font-size: 18px; line-height: 1.8; margin-bottom: 0;">
+                        상승수학은 학생들이 편리하게 방문할 수 있는 좋은 접근성을 갖추고 있습니다. 아래 약도를 참고하셔서 방문해 주시면 친절하게 안내해 드리겠습니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Info & Transport -->
+        <section class="section-item bg-white">
+            <div class="container">
+                <div class="content text-container">
+                    <h3 style="font-size: 24px; font-weight: 700; margin-bottom: 20px; color: #333;">1. 상승수학 오시는 길
+                    </h3>
+                    <ul
+                        style="list-style: none; padding-left: 0; margin-bottom: 40px; line-height: 2; font-size: 17px; background-color: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.03);">
+                        <li><strong>📍 주소:</strong> 서울특별시 강남구 대치동 906-20 (역삼로 423) 화남빌딩 7층</li>
+                        <li><strong>📞 전화번호:</strong> 02-577-1777</li>
+                        <li><strong>🕒 상담 가능 시간:</strong> 평일 오후 1시 ~ 9시 / 주말 오전 11시 ~ 오후 5시 <span
+                                style="color: red; display: inline-block; word-break: keep-all;">(방문 전 전화 예약 필수)</span>
+                        </li>
+                    </ul>
+
+                    <h3 style="font-size: 24px; font-weight: 700; margin-bottom: 20px; color: #333;">2. 대중교통 이용 안내
+                    </h3>
+                    <div
+                        style="background-color: #fff; padding: 30px; border-radius: 12px; margin-bottom: 0; border: 1px solid #eef4fc;">
+                        <h4 style="font-size: 18px; font-weight: 600; margin-bottom: 15px;">🚇 지하철</h4>
+                        <p style="line-height: 1.8; margin-bottom: 20px;">
+                            선릉역 1번 출구에서 도보 약 7분 / 한티역 1번 출구에서 도보 약 10분
+                        </p>
+
+                        <h4 style="font-size: 18px; font-weight: 600; margin-bottom: 15px;">🚌 버스 (학원 인근 정류장별 노선 안내)
+                        </h4>
+                        <ul style="list-style: none; padding-left: 0; line-height: 1.8;">
+                            <li style="margin-bottom: 10px;"><strong>도성초교 사거리:</strong> 간선 350, 472, 740 / 지선 3422,
+                                4412</li>
+                            <li style="margin-bottom: 10px;"><strong>도성초등학교:</strong> 간선 147, 242, 333, 472, 740 / 지선
+                                4412, 6411
+                            </li>
+                            <li style="margin-bottom: 10px;"><strong>도성초등학교앞:</strong> 간선 147, 333, 350, 472 / 지선 3422
+                            </li>
+                            <li><strong>강남더드림병원:</strong> 지선 3323</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Parking & Map -->
+        <section class="section-item bg-white">
+            <div class="container">
+                <div class="content text-container">
+                    <h3 style="font-size: 24px; font-weight: 700; margin-bottom: 20px; color: #333;">3. 주차 안내</h3>
+                    <p style="font-size: 17px; line-height: 1.8; margin-bottom: 40px;">
+                        주차 가능
+                    </p>
+
+                    <!-- Map Container -->
+                    <!-- Map Container -->
+                    <h3 style="font-size: 24px; font-weight: 700; margin-bottom: 20px; color: #333; margin-top: 60px;">
+                        4. 길찾기</h3>
+
+                    <div class="map-wrapper"
+                        style="border-radius: 12px; overflow: hidden; border: 1px solid #ddd; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                        <img src="./images/map.png" alt="상승수학학원 지도" style="width: 100%; display: block;">
+                    </div>
+
+                    <div style="text-align: center; margin-top: 30px;">
+                        <a href="https://map.naver.com/p/search/%EC%83%81%EC%8A%B9%EC%88%98%ED%95%99%ED%95%99%EC%9B%90?c=16.93,0,0,0,dh"
+                            target="_blank"
+                            style="display: inline-flex; align-items: center; justify-content: center; padding: 12px 30px; background-color: #03C75A; color: white; text-decoration: none; font-weight: 700; border-radius: 50px; font-size: 18px; box-shadow: 0 4px 10px rgba(3, 199, 90, 0.3); transition: transform 0.2s, box-shadow 0.2s;">
+                            네이버 지도로 길찾기
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-links">
+                <a href="#">이용약관</a>
+                <a href="#">개인정보처리방침</a>
+            </div>
+            <div class="footer-info">
+                <p>우편번호 06197 서울특별시 강남구 대치동 906-20 화남빌딩 7층</p>
+                <p>전화 02.577.1777 | e-mail imp7282@naver.com</p>
+                <p>사업자등록번호 320-96-01774 | 학원설립운영등록번호 12986 | 대표자 권신영</p>
+            </div>
+            <p class="copyright">Copyright © 2024 상승수학. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="side-sticky-menu">
+        <a href="https://blog.naver.com/wmath577" target="_blank" class="sticky-tab tab-blog">
+            <span class="tab-text">BLOG</span>
+        </a>
+        <a href="tel:025771777" class="sticky-tab tab-call">
+            <span class="tab-text">CALL</span>
+        </a>
+    </div>
+
+    <script src="js/app.js?v=fix2"></script>
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox-modal">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <script>
+        function openPricePopup() {
+            var modal = document.getElementById("lightbox");
+            var modalImg = document.getElementById("lightbox-img");
+
+            // 이미지 경로 설정
+            modalImg.src = "./images/academy/200_price.webp";
+
+            // 팝업 강제 표시
+            modal.style.display = "flex";
+            modal.style.zIndex = "9999";
+
+            // 닫기 버튼 연결
+            var span = document.getElementsByClassName("lightbox-close")[0];
+            if (span) {
+                span.onclick = function () {
+                    modal.style.display = "none";
+                }
+            }
+
+            // 배경 클릭 시 닫기
+            modal.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./images/favicon.png">
+    <title>원장직강 - 상승수학</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container header-container">
+            <!-- Mobile Circular Menu Trigger -->
+            <div class="mobile-menu-container">
+                <button class="menu-toggle" id="mobileMenuTrigger">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+                <div class="circular-menu-items" id="circularMenuItems">
+                    <div class="menu-item" style="--angle: 0; --dist: 90px;">
+                        <a href="director.html">원장<br>직강</a>
+                    </div>
+                    <div class="menu-item" style="--angle: 20; --dist: 95px;">
+                        <a href="nsu.html">재수<br>N수</a>
+                    </div>
+                    <div class="menu-item" style="--angle: 40; --dist: 100px;">
+                        <a href="high.html">고등부</a>
+                    </div>
+                    <div class="menu-item" style="--angle: 60; --dist: 100px;">
+                        <a href="middle.html">중등부</a>
+                    </div>
+                    <div class="menu-item" style="--angle: 80; --dist: 95px;">
+                        <a href="location.html">위치</a>
+                    </div>
+                    <div class="menu-item" style="--angle: 100; --dist: 90px;">
+                        <a href="#" onclick="openPricePopup(); return false;">공지</a>
+                    </div>
+                </div>
+            </div>
+
+            <h1 class="logo">
+                <a href="index.html">
+                    <img src="./images/logo_transparent.png" alt="상승수학">
+                </a>
+            </h1>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Overview</a></li>
+                    <li><a href="director.html">원장직강</a></li>
+                    <li><a href="nsu.html">재수•N수</a></li>
+                    <li><a href="high.html">고등부</a></li>
+                    <li><a href="middle.html">중등부</a></li>
+                    <li><a href="location.html">위치및약도</a></li>
+                    <li><a href="#" onclick="openPricePopup(); return false;">공지사항</a></li>
+                </ul>
+            </nav>
+            <div class="header-utils">
+                <a href="#" class="login-btn">로그인</a>
+            </div>
+        </div>
+        <!-- Mobile Horizontal Scroll Menu -->
+        <nav class="mobile-scroll-nav">
+            <ul>
+                <li><a href="index.html">Overview</a></li>
+                <li><a href="director.html" class="active">원장직강</a></li>
+                <li><a href="nsu.html">재수•N수</a></li>
+                <li><a href="high.html">고등부</a></li>
+                <li><a href="middle.html">중등부</a></li>
+                <li><a href="location.html">위치및약도</a></li>
+                <li><a href="#" onclick="openPricePopup(); return false;">공지사항</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="padding-top: 50px; min-height: 60vh;">
+        <!-- Section 1: Intro & Title -->
+        <section class="section-item bg-soft-gray">
+            <div class="container">
+                <div class="section-title-wrapper">
+                    <h2 style="font-size: 32px; font-weight: 700; margin: 0;">원장 직강</h2>
+                </div>
+                <div class="content text-container">
+                    <p style="font-size: 18px; line-height: 1.8; margin-bottom: 0;">
+                        상승수학은 20년 대치동 고3 전문 경력을 가진 현창호 원장의 직접 강의와 밀착 관리로 운영됩니다. 수많은 학생들을 성공으로 이끈 경험과 깊이 있는 교육 철학을
+                        바탕으로, 학생 개개인의 잠재력을 최대한으로 끌어올립니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Director Profile -->
+        <section class="section-item bg-soft-blue">
+            <div class="container">
+                <div class="content text-container">
+                    <h3 style="font-size: 24px; font-weight: 700; color: #0044cc; margin-bottom: 30px;">
+                        현창호 원장, 그는 누구인가?
+                    </h3>
+                    <ul
+                        style="list-style-type: none; padding-left: 0; line-height: 2; background: rgba(255,255,255,0.6); padding: 30px; border-radius: 12px; border: 1px solid rgba(0,68,204,0.1);">
+                        <li style="margin-bottom: 15px;">
+                            <span style="color: #0044cc; font-weight: 700; font-size: 1.1em;">■ 대치동 고3 경력 20년</span><br>
+                            대치동 최상위권 학생들을 지도하며 쌓은 독보적인 노하우를 보유하고 있습니다.
+                        </li>
+                        <li style="margin-bottom: 15px;">
+                            <span style="color: #0044cc; font-weight: 700; font-size: 1.1em;">■ 前 대치동 가인아카데미, 수학의 창 수업
+                                원장</span><br>
+                            대치동 대표 학원들의 핵심 시스템을 직접 설계하고 운영하며 검증된 실력을 갖추었습니다.
+                        </li>
+                        <li style="margin-bottom: 0;">
+                            <span style="color: #0044cc; font-weight: 700; font-size: 1.1em;">■ 前 민성원 연구소 부설 수학연구소
+                                원장</span><br>
+                            학습 전략 전문가들과 함께 학생 맞춤형 수학 학습법을 연구하고 적용해왔습니다.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Philosophy & Analysis -->
+        <section class="section-item bg-white">
+            <div class="container">
+                <div class="content text-container">
+                    <h3 style="font-size: 24px; font-weight: 700; color: #333; margin-bottom: 20px;">
+                        학생에 대한 진심, 그리고 탁월한 분석력
+                    </h3>
+                    <p style="line-height: 1.8; margin-bottom: 30px;">
+                        현창호 원장은 단순히 수학을 가르치는 것을 넘어, 학생 한 명 한 명에 대해 진심으로 고민하고 그들의 특성을 정확히 파악하는 탁월한 능력을 가지고 있습니다. 이는 학생의
+                        현재 상태를 진단하고 최적의 학습 방향을 제시하는 데 결정적인 역할을 합니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Correction & Diagnosis -->
+        <!-- Section 2: Correction (Soft Gray) -->
+        <section class="section-item bg-soft-gray">
+            <div class="container">
+                <div class="content text-container">
+                    <!-- Content Block 2: Correction -->
+                    <div>
+                        <h3 style="font-size: 24px; font-weight: 700; color: #333; margin-bottom: 20px;">
+                            잘못된 수학 공부 방식 교정
+                        </h3>
+                        <p style="line-height: 1.8; margin-bottom: 20px;">
+                            무작정 문제만 풀고 오답을 정리하지 않는 학생, 개념 이해 없이 공식 암기에만 의존하는 학생 등 비효율적인 학습 습관을 정확히 짚어내고 올바른 공부법을
+                            제시합니다.
+                        </p>
+                        <p style="line-height: 1.8;">
+                            수능대비는 등급별로 공부방식이 다름을 명확히 알고 있습니다. 3등급까지 가기 위해서는 기출문제의 분석, 오답 등 이해에 기반한 암기를 우선시하며,
+                            2등급 부터는 개개인에 맞는 수학적 창의력을 키울수 있는 적절한 문제를 제공합니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Diagnosis (Soft Blue) -->
+        <section class="section-item bg-soft-blue">
+            <div class="container">
+                <div class="content text-container">
+                    <!-- Content Block 3: Diagnosis -->
+                    <div>
+                        <h3 style="font-size: 24px; font-weight: 700; color: #333; margin-bottom: 20px;">
+                            숨겨진 학습 장애 요인 진단
+                        </h3>
+                        <p style="line-height: 1.8;">
+                            수학에 대한 막연한 두려움, 특정 단원에 대한 고정관념, 불안감 등 심리적인 요인까지 파악하여 학습 몰입을 방해하는 요소를 제거하는 데 도움을
+                            줍니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Summary Message -->
+        <section class="section-item bg-white">
+            <div class="container">
+                <div class="content text-container">
+                    <p class="director-summary-text" style="color: #0026e6 !important; font-weight: 700;">
+                        현창호 원장의 수업은 단순한 지식 전달을 넘어,<br>학생의 올바른 공부 습관을 잡아주고,<br>스스로 계획을 짜고 실행할 수 있는 힘을 키우도록 돕습니다.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-links">
+                <a href="#">이용약관</a>
+                <a href="#">개인정보처리방침</a>
+            </div>
+            <div class="footer-info">
+                <p>우편번호 06197 서울특별시 강남구 대치동 906-20 화남빌딩 7층</p>
+                <p>전화 02.577.1777 | e-mail imp7282@naver.com</p>
+                <p>사업자등록번호 320-96-01774 | 학원설립운영등록번호 12986 | 대표자 권신영</p>
+            </div>
+            <p class="copyright">Copyright © 2024 상승수학. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="side-sticky-menu">
+        <a href="https://blog.naver.com/wmath577" target="_blank" class="sticky-tab tab-blog">
+            <span class="tab-text">BLOG</span>
+        </a>
+        <a href="tel:025771777" class="sticky-tab tab-call">
+            <span class="tab-text">CALL</span>
+        </a>
+    </div>
+
+    <script src="js/app.js?v=fix2"></script>
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox-modal">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <script>
+        function openPricePopup() {
+            var modal = document.getElementById("lightbox");
+            var modalImg = document.getElementById("lightbox-img");
+
+            // 이미지 경로 설정
+            modalImg.src = "./images/academy/200_price.webp";
+
+            // 팝업 강제 표시
+            modal.style.display = "flex";
+            modal.style.zIndex = "9999";
+
+            // 닫기 버튼 연결
+            var span = document.getElementsByClassName("lightbox-close")[0];
+            if (span) {
+                span.onclick = function () {
+                    modal.style.display = "none";
+                }
+            }
+
+            // 배경 클릭 시 닫기
+            modal.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

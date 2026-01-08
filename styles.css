@@ -1,0 +1,1937 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+    color: #1a1a1a;
+    background-color: #ffffff;
+    line-height: 1.6;
+    word-break: keep-all;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* Glassmorphism: Transparent white + Blur */
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 1000;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+/* Hero Content Text Styles (Updated) */
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+}
+
+.hero-content .subtitle {
+    font-size: 2.88rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+    letter-spacing: -0.5px;
+    padding: 5px 10px;
+    /* Optional: adds a bit of spacing if we ever add background */
+    word-break: keep-all;
+    white-space: pre-wrap;
+}
+
+.hero-content .title {
+    font-size: 3.84rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    margin-top: 5px;
+    letter-spacing: -1px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo img {
+    height: 40px;
+    display: block;
+    /* mix-blend-mode: multiply; Removed - using transparent PNG */
+
+}
+
+.nav-menu {
+    display: flex;
+    gap: 15px;
+    /* Reduced from 30px to compensate for link padding */
+}
+
+/* Nav Menu Item Layout */
+.nav-menu li a {
+    font-size: 17px;
+    font-weight: 500;
+    color: #333;
+    padding: 10px 0;
+    transition: color 0.3s;
+}
+
+.nav-menu li a:hover {
+    color: #000;
+    font-weight: 700;
+}
+
+/* Removed Login Button Styles */
+.login-btn {
+    display: none;
+}
+
+/* Carousel Section */
+/* Carousel Section */
+.hero-carousel {
+    position: relative;
+    padding-top: 80px;
+    height: 600px;
+    overflow: hidden;
+    background-color: #fcfcfc;
+}
+
+.carousel-container {
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.carousel-slide {
+    display: none;
+    height: 100%;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: fade 1.5s;
+    background-size: cover;
+    /* Added for image background */
+    background-position: center;
+}
+
+.carousel-slide.active {
+    display: flex;
+}
+
+.carousel-slide img {
+    width: 100%;
+    display: block;
+}
+
+/* Dots handled in HTML/JS, styling here */
+.carousel-controls {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.dot {
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+    margin: 0 4px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dot.active,
+.dot:hover {
+    background-color: #0044cc;
+    /* Active dot color */
+    border-color: #0044cc;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+/* Typing Dots Animation */
+.typing-dots {
+    display: inline-block;
+    margin-left: 4px;
+}
+
+.typing-dots span {
+    opacity: 0;
+    animation: typingDot 1.8s infinite;
+}
+
+.typing-dots span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.typing-dots span:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.typing-dots span:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes typingDot {
+
+    0%,
+    20% {
+        opacity: 0;
+    }
+
+    30%,
+    70% {
+        opacity: 1;
+    }
+
+    80%,
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Terminator Flying Dots Animation - 점이 날아와서 박히는 효과 */
+.terminator-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.flying-dots {
+    position: absolute;
+    top: -0.4em;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 1em;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    gap: 0.3em;
+}
+
+/* 점 2개 생성 */
+.flying-dots::before,
+.flying-dots::after {
+    content: '•';
+    position: absolute;
+    font-size: 1.5rem;
+    color: #FFFFFF;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    top: 0;
+}
+
+/* 첫 번째 점 - "표" 글자 중앙 */
+.flying-dots::before {
+    left: 20%;
+    animation: flyAndLand 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.5s forwards;
+}
+
+/* 두 번째 점 - "준" 글자 중앙 */
+.flying-dots::after {
+    left: 70%;
+    animation: flyAndLand 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.8s forwards;
+}
+
+/* 세 번째 점 제거 - 이제 2개만 사용 */
+.terminator-wrapper::before {
+    content: '';
+    position: absolute;
+    font-size: 1.5rem;
+    color: #FFFFFF;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    top: -0.5em;
+    left: calc(50% - 0.3em);
+    pointer-events: none;
+    animation: flyAndLand 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.8s forwards;
+}
+
+/* 날아와서 박히는 애니메이션 */
+@keyframes flyAndLand {
+    0% {
+        transform: translateY(100px) scale(0.3);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    80% {
+        transform: translateY(-5px) scale(1.2);
+    }
+
+    90% {
+        transform: translateY(2px) scale(0.95);
+    }
+
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+
+
+/* Main Message */
+.main-message {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.message-content h3 {
+    font-size: 46px;
+    /* 1.5x of 36px */
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 30px;
+    /* Halved from 60px */
+}
+
+.brand-name {
+    color: #0044cc;
+}
+
+.philosophy {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 27px;
+    /* 1.5x of 18px */
+}
+
+.primary-msg {
+    font-size: 36px;
+    /* 1.5x of 24px */
+    margin-bottom: 5px;
+    /* Halved from 10px */
+}
+
+.secondary-msg {
+    font-size: 24px;
+    /* Increased for visibility */
+    color: #555;
+    margin-bottom: 20px;
+    /* Halved from 40px */
+}
+
+.questions {
+    background-color: #f9f9f9;
+    padding: 20px;
+    /* Halved from 40px */
+    border-radius: 8px;
+    margin-bottom: 20px;
+    /* Halved from 40px */
+}
+
+.questions p {
+    font-size: 24px;
+    font-style: italic;
+    color: #666;
+    margin: 5px 0;
+    word-break: keep-all;
+    /* Ensure whole words stay together */
+}
+
+.keep-all {
+    word-break: keep-all;
+    /* display: inline-block; Removed to allow stacking */
+    margin-bottom: 5px;
+    /* Add some spacing between lines */
+}
+
+.final-msg {
+    font-size: 24px;
+    /* Consistent size */
+    line-height: 1.6;
+}
+
+.visual-image {
+    margin-top: 80px;
+}
+
+.visual-image img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Footer */
+footer {
+    background-color: #111;
+    color: #999;
+    padding: 60px 0;
+    font-size: 14px;
+    text-align: center;
+    /* Center text content */
+}
+
+.footer-links {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    /* Center flex items */
+    gap: 20px;
+}
+
+.footer-info p {
+    margin-bottom: 8px;
+}
+
+.copyright {
+    margin-top: 30px;
+    font-size: 12px;
+    color: #555;
+    word-break: keep-all;
+}
+
+/* Footer Typography Helpers */
+.mobile-break {
+    display: none;
+}
+
+.desktop-divider {
+    display: inline;
+}
+
+@media (max-width: 768px) {
+    .mobile-break {
+        display: block;
+        /* Force new line on mobile */
+    }
+
+    .desktop-divider {
+        display: none;
+        /* Hide divider when breaking line */
+    }
+
+    .footer-info p {
+        line-height: 1.6;
+        word-break: keep-all;
+    }
+}
+
+/* Bottom Content Slideshow */
+.content-slideshow {
+    position: relative;
+    width: 100%;
+    margin-top: 60px;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.content-slideshow .carousel-slide {
+    display: none;
+    width: 100%;
+    height: auto;
+    animation: fade 1.5s;
+}
+
+.content-slideshow .carousel-slide.active {
+    display: block;
+}
+
+.content-slideshow img {
+    width: 100%;
+    display: block;
+}
+
+.fade-in {
+    animation: fadeIn 1s ease forwards;
+    opacity: 0;
+}
+
+.fade-up {
+    animation: fadeUp 1s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.delay-1 {
+    animation-delay: 0.2s;
+}
+
+.delay-2 {
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        height: 50px !important;
+        padding-bottom: 0;
+        flex-direction: column;
+        align-items: center;
+        /* Center everything */
+    }
+
+    .header-container {
+        padding: 0 15px;
+        /* Removed top padding to center logo */
+        height: 100%;
+        /* Use full header height */
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        /* Center logo horizontally */
+        align-items: center;
+    }
+
+    .logo img {
+        height: 26px;
+        /* Slightly smaller logo */
+        display: block;
+    }
+
+    /* Hide desktop nav */
+    .desktop-nav {
+        display: none;
+    }
+
+    .nav-menu {
+        display: none;
+    }
+
+    .hero-content .title {
+        font-size: 3.2rem;
+    }
+
+    .hero-content .subtitle {
+        font-size: 2.4rem;
+    }
+
+    /* Main Message Mobile Sizing (-20%) */
+    .philosophy .primary-msg {
+        font-size: 26px;
+    }
+
+    .philosophy .secondary-msg,
+    .questions p,
+    .final-msg {
+        font-size: 17px;
+    }
+
+    /* Adjust question box padding slightly for smaller text */
+    .questions {
+        padding: 15px;
+    }
+
+    .message-content h3 {
+        font-size: 29px;
+    }
+
+    /* Target main-message specifically if needed */
+    .main-message {
+        padding: 42px 0;
+    }
+
+    /* Adjust Hero Carousel top padding for taller header */
+    .hero-carousel {
+        padding-top: 50px;
+        /* Match fixed header height */
+        overflow: visible;
+        /* Allow scroll indicator to sit on the boundary */
+    }
+}
+
+/* Mobile Horizontal Scroll Menu */
+.mobile-scroll-nav {
+    display: none;
+    width: 100%;
+    /* Glassmorphism for mobile header */
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    /* Added subtle top border as requested */
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 10px;
+    /* Reduced side padding */
+}
+
+/* Hide Scrollbar */
+.mobile-scroll-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.mobile-scroll-nav ul {
+    display: flex;
+    gap: 6.8px;
+    /* Reduced by 15% (Old: 8px) */
+    padding: 0;
+    margin: 0;
+    justify-content: space-between;
+    /* Spread evenly */
+    width: 100%;
+}
+
+.mobile-scroll-nav li {
+    flex: 0 0 auto;
+}
+
+.mobile-scroll-nav li a {
+    display: block;
+    padding: 7px 1px;
+    /* Reduced padding (-10%) */
+    font-size: 13px;
+    /* Increased by 15% (Old: 11.25px) */
+    font-weight: 400;
+    /* Thinner font */
+    color: #555;
+    /* Softer grey */
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+}
+
+
+
+.mobile-scroll-nav li a.active,
+.mobile-scroll-nav li a:hover {
+    color: #0044cc;
+    font-weight: 700;
+    border-bottom-color: #0044cc;
+}
+
+@media (max-width: 768px) {
+    .mobile-scroll-nav {
+        display: block;
+    }
+}
+
+/* ============================================
+   Universe Parallax Section - 우주 배경 패럴랙스
+   ============================================ */
+.universe-parallax-section {
+    position: relative;
+    background-image: url('./images/universe_bg.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 160px 0;
+    /* 100% 증가 (기본 80px에서) */
+    overflow: hidden;
+}
+
+/* 배경 오버레이 - 옅은 회색 셀로판지 느낌 */
+.universe-parallax-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(200, 200, 200, 0.7);
+    /* 0.7로 더 진하게 */
+    z-index: 1;
+}
+
+/* 섹션 전체에 빛이 지나가는 효과 */
+.universe-parallax-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.3) 50%,
+            /* 더 밝게 */
+            transparent 100%);
+    transform: skewX(-45deg);
+    /* 45도로 더 눕힘 */
+    animation: section-shine-sweep 5s ease-in-out infinite;
+    /* 5초로 더 빠르게 */
+    pointer-events: none;
+    z-index: 2;
+}
+
+@keyframes section-shine-sweep {
+    0% {
+        left: -100%;
+    }
+
+    50% {
+        left: 150%;
+    }
+
+    100% {
+        left: 150%;
+    }
+}
+
+/* 컨테이너를 오버레이 위로 */
+.universe-parallax-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Quick Access Menu Styles (Grouped & Modern) */
+.quick-access-container {
+    max-width: 1000px;
+    margin: 80px auto 120px;
+    /* PC는 원래대로 */
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Common Item Styles */
+.quick-menu-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    /* Space between icon and text */
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #f0f0f0;
+    border-radius: 16px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #444;
+    transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.quick-menu-item i {
+    font-size: 20px;
+    color: #666;
+    transition: color 0.25s;
+}
+
+.quick-menu-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    border-color: #0044cc;
+    color: #0044cc;
+    background-color: #fbfdff;
+}
+
+.quick-menu-item:hover i {
+    color: #0044cc;
+}
+
+.quick-menu-item:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* ============================================
+   Glass Menu - 글래스모피즘 효과 (울트라)
+   ============================================ */
+.glass-menu {
+    position: relative;
+    background: rgba(255, 255, 255, 0.45) !important;
+    backdrop-filter: blur(40px) saturate(200%) brightness(1.1);
+    -webkit-backdrop-filter: blur(40px) saturate(200%) brightness(1.1);
+    border: 3px solid rgba(255, 255, 255, 0.9);
+    box-shadow:
+        0 12px 40px 0 rgba(0, 0, 0, 0.65),
+        0 0 0 1px rgba(255, 255, 255, 0.4) inset,
+        0 8px 32px 0 rgba(255, 255, 255, 0.3) inset;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    /* 순차 애니메이션 */
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeUpIn 0.6s ease-out forwards;
+}
+
+/* 각 버튼별 딜레이 */
+.glass-menu[data-order="1"] {
+    animation-delay: 0.1s;
+}
+
+.glass-menu[data-order="2"] {
+    animation-delay: 0.2s;
+}
+
+.glass-menu[data-order="3"] {
+    animation-delay: 0.3s;
+}
+
+.glass-menu[data-order="4"] {
+    animation-delay: 0.4s;
+}
+
+.glass-menu[data-order="5"] {
+    animation-delay: 0.5s;
+}
+
+.glass-menu[data-order="6"] {
+    animation-delay: 0.6s;
+}
+
+.glass-menu[data-order="7"] {
+    animation-delay: 0.7s;
+}
+
+/* 프리미엄 빛 테두리 효과 */
+.glass-menu::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    padding: 1px;
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.4) 0%,
+            transparent 50%,
+            rgba(255, 255, 255, 0.2) 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.glass-menu:hover {
+    background: rgba(255, 255, 255, 0.7) !important;
+    border: 3px solid rgba(255, 255, 255, 1);
+    box-shadow:
+        0 20px 60px 0 rgba(0, 0, 0, 0.8),
+        0 0 50px 0 rgba(255, 255, 255, 0.3),
+        /* 외곽 아우라 */
+        0 0 0 2px rgba(255, 255, 255, 0.6) inset,
+        0 12px 36px 0 rgba(255, 255, 255, 0.4) inset;
+    transform: translateY(-12px) scale(1.04);
+    /* 더 액티브한 움직임 */
+}
+
+/* 유리 반사 효과 - Glass Shine Sweep (극대화) */
+.glass-shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    /* 더 넓게 */
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.8) 50%,
+            /* 극대화 */
+            transparent 100%);
+    transform: skewX(-20deg);
+    transition: left 0.7s cubic-bezier(0.25, 0.8, 0.25, 1);
+    pointer-events: none;
+    z-index: 10;
+}
+
+.glass-menu:hover .glass-shine {
+    left: 150%;
+}
+
+/* Image Link Styles */
+.quick-menu-img-link {
+    display: block;
+    width: 100%;
+    transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border-radius: 12px;
+    overflow: hidden;
+    /* Premium Box-Shadow */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.quick-menu-img-link img {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 5;
+}
+
+
+.quick-menu-img-link:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+    /* Slightly softer hover shadow */
+}
+
+.quick-menu-img-link:active {
+    transform: scale(0.98);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Pressed shadow */
+}
+
+/* Removed Group 1: Blog (moved to bottom) */
+
+/* Quick Menu Image Swap */
+.quick-menu-img-link.hover-swap {
+    position: relative;
+    display: block;
+}
+
+.quick-menu-img-link.hover-swap .img-hover {
+    display: none;
+    width: 100%;
+    /* Ensure hover image fits container */
+}
+
+.quick-menu-img-link.hover-swap:hover .img-normal {
+    display: none;
+}
+
+.quick-menu-img-link.hover-swap:hover .img-hover {
+    display: block;
+}
+
+/* Group 2: Education (4 columns PC, 2 columns Mobile) */
+.edu-group {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+/* Group 3: Bottom Group (Location, Blog, Phone) */
+.bottom-group {
+    width: 100%;
+    /* Removed max-width constraint to match edu-group width */
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+/* Accessibility */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Mobile Adjustments & Responsive Visibility */
+@media (max-width: 768px) {
+    .quick-access-container {
+        padding: 0 16px;
+        gap: 12px;
+        margin: 42px auto;
+    }
+
+    .bottom-group {
+        max-width: 100%;
+        /* Reset max-width for mobile */
+    }
+
+    .edu-group {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .quick-menu-item {
+        padding: 16px;
+        border-radius: 14px;
+    }
+}
+
+/* --- AnG Design Effects --- */
+
+/* 1. Top 4 Menus - 3D Lift & Shadow */
+.edu-group .quick-menu-img-link {
+    border-radius: 8px !important;
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.edu-group .quick-menu-img-link:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* 3. Blog Button - PC에서는 다른 버튼들과 동일한 스타일, 모바일 sticky 메뉴에서만 pulse 효과 */
+
+/* 모바일 sticky 메뉴의 블로그 버튼만 pulse 효과 유지 */
+@keyframes pulse-glow-prominent {
+    0% {
+        box-shadow: 0 0 0 0 rgba(243, 156, 18, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(243, 156, 18, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(243, 156, 18, 0);
+    }
+}
+
+.mobile-fixed-menu .btn-blog {
+    animation: pulse-glow-prominent 2s infinite;
+    border: 1px solid rgba(243, 156, 18, 0.3);
+}
+
+/* 2. Mobile Sticky Side Menu (Right Edge, 1/3 Height) */
+.side-sticky-menu {
+    display: none;
+    position: fixed;
+    top: 70%;
+    right: 0;
+    z-index: 9999;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Pulse Animation - 주기적으로 살짝 커졌다 작아지는 효과 */
+@keyframes gentle-pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Neon Glow Animation - 네온 빛나는 효과 */
+@keyframes neon-glow {
+
+    0%,
+    100% {
+        filter: brightness(1) drop-shadow(0 0 8px currentColor);
+    }
+
+    50% {
+        filter: brightness(1.2) drop-shadow(0 0 15px currentColor);
+    }
+}
+
+.sticky-tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 18px 14px 22px;
+    color: white;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 15px;
+    letter-spacing: 1px;
+    border-radius: 50px 0 0 50px;
+    /* 3D 입체감 효과 */
+    box-shadow:
+        -6px 6px 20px rgba(0, 0, 0, 0.3),
+        -2px 2px 8px rgba(0, 0, 0, 0.2),
+        inset 2px -2px 8px rgba(0, 0, 0, 0.15),
+        inset -2px 2px 8px rgba(255, 255, 255, 0.2);
+    /* 부드러운 전환 효과 */
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+    overflow: hidden;
+    /* 펄스 애니메이션 적용 */
+    animation: gentle-pulse 3s ease-in-out infinite;
+    /* 3D 변형 */
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+/* 호버 시 확장 애니메이션 */
+.sticky-tab:hover {
+    transform: translateX(-20px) scale(1.1) rotateY(-5deg);
+    box-shadow:
+        -10px 10px 30px rgba(0, 0, 0, 0.4),
+        -4px 4px 15px rgba(0, 0, 0, 0.3),
+        inset 3px -3px 10px rgba(0, 0, 0, 0.2),
+        inset -3px 3px 10px rgba(255, 255, 255, 0.3);
+    letter-spacing: 2px;
+    animation: none;
+    /* 호버 시 펄스 중지 */
+}
+
+/* 클릭 시 효과 */
+.sticky-tab:active {
+    transform: translateX(-10px) scale(0.95);
+    box-shadow:
+        -3px 3px 10px rgba(0, 0, 0, 0.3),
+        inset 2px -2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* 리플 효과를 위한 가상 요소 */
+.sticky-tab::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.sticky-tab:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Tab 1: BLOG - 네이버 그린 그라디언트 + 네온 효과 */
+.tab-blog {
+    background: linear-gradient(135deg, #00C73C 0%, #00E047 50%, #00C73C 100%);
+    background-size: 200% 200%;
+    animation: gentle-pulse 3s ease-in-out infinite, gradient-shift 4s ease infinite;
+    /* 네온 글로우 */
+    text-shadow:
+        0 0 10px rgba(0, 255, 71, 0.8),
+        0 0 20px rgba(0, 255, 71, 0.5),
+        0 0 30px rgba(0, 255, 71, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.tab-blog:hover {
+    background: linear-gradient(135deg, #00E047 0%, #00FF50 50%, #00E047 100%);
+    text-shadow:
+        0 0 15px rgba(0, 255, 71, 1),
+        0 0 30px rgba(0, 255, 71, 0.7),
+        0 0 45px rgba(0, 255, 71, 0.5);
+}
+
+/* Tab 2: CALL - 블루 그라디언트 + 네온 효과 */
+.tab-call {
+    background: linear-gradient(135deg, #0044cc 0%, #0055ff 50%, #0044cc 100%);
+    background-size: 200% 200%;
+    animation: gentle-pulse 3s ease-in-out infinite 0.5s, gradient-shift 4s ease infinite 0.5s;
+    /* 네온 글로우 */
+    text-shadow:
+        0 0 10px rgba(0, 85, 255, 0.8),
+        0 0 20px rgba(0, 85, 255, 0.5),
+        0 0 30px rgba(0, 85, 255, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.tab-call:hover {
+    background: linear-gradient(135deg, #0055ff 0%, #0066ff 50%, #0055ff 100%);
+    text-shadow:
+        0 0 15px rgba(0, 85, 255, 1),
+        0 0 30px rgba(0, 85, 255, 0.7),
+        0 0 45px rgba(0, 85, 255, 0.5);
+}
+
+/* 그라디언트 이동 애니메이션 */
+@keyframes gradient-shift {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.tab-text {
+    line-height: 1;
+    position: relative;
+    z-index: 1;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+/* Mobile Visibility Only */
+@media (min-width: 769px) {
+    .side-sticky-menu {
+        display: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .side-sticky-menu {
+        display: flex;
+    }
+
+    /* Hide original bottom group on mobile */
+    .quick-access-container .bottom-group {
+        display: none;
+    }
+
+    /* Adjust main content footer padding */
+    footer {
+        padding: 42px 0;
+    }
+}
+
+/* --- Subpage Background Enhancements --- */
+
+.section-item {
+    padding: 80px 0;
+    /* Generous vertical spacing optimized */
+}
+
+.bg-white {
+    background-color: #ffffff;
+}
+
+.bg-soft-blue {
+    /* Slightly more distinct sky blue */
+    background: linear-gradient(to bottom, #ebf5fe, #dcedfc);
+    border-top: 1px solid #d0e4f7;
+    border-bottom: 1px solid #d0e4f7;
+}
+
+.bg-soft-gray {
+    /* Slightly more distinct cool gray */
+    background: linear-gradient(to bottom, #f5f7fa, #e9ecef);
+    border-top: 1px solid #dce2e6;
+    border-bottom: 1px solid #dce2e6;
+}
+
+/* Adjust text container for better readability on colored backgrounds */
+.text-container p,
+.text-container li {
+    color: #222;
+    /* darker text for better contrast */
+}
+
+.section-title-wrapper {
+    margin-bottom: 40px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 20px;
+    /* Match text-container alignment */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Mobile adjustments for sections */
+@media (max-width: 768px) {
+    .section-item {
+        padding: 42px 0;
+    }
+}
+
+/* --- AnG Readability Improvements --- */
+
+/* Text Container: Constrain width for better reading experience */
+.text-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.director-summary-text {
+    line-height: 1.8;
+    font-size: 18px;
+    font-weight: 700;
+    /* Bold */
+    color: #0026e6;
+    /* Strong Blue */
+    border: 2px solid #eef4fc;
+    padding: 30px;
+    text-align: center;
+    border-radius: 16px;
+    background-color: #f8fbff;
+    box-shadow: 0 10px 30px rgba(0, 68, 204, 0.05);
+}
+
+@media (min-width: 768px) {
+    .director-summary-text {
+        font-size: 24px;
+        /* ~130% of 18px for PC */
+        font-weight: 700;
+        color: #0026e6;
+    }
+}
+
+/* Section Divider: Visual break between content blocks */
+.section-divider {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+    margin: 60px auto;
+    width: 80%;
+}
+
+/* Centered Section Title (e.g., for Review Section) */
+.section-title-center {
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    color: #111;
+    margin: 60px 0 30px;
+    letter-spacing: -0.5px;
+}
+
+/* --- Modern Carousel Arrows --- */
+.carousel-controls {
+    position: absolute;
+    bottom: 30px;
+    /* Position indicators at bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    /* Space between arrows and dots */
+    z-index: 10;
+    width: 100%;
+    justify-content: center;
+    pointer-events: none;
+    /* Allow clicking through empty space */
+}
+
+/* Dots container centered */
+.dots-container {
+    display: flex;
+    gap: 12px;
+    pointer-events: auto;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dot.active {
+    background-color: #fff;
+    transform: scale(1.2);
+}
+
+/* Arrows styling */
+.prev-btn,
+.next-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+    pointer-events: auto;
+    /* Remove default button styles */
+    outline: none;
+    -webkit-appearance: none;
+    padding: 0;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Specific Arrow Icons replacement or tweak */
+/* Assuming standard HTML entities are used,
+font-size controls size */
+/* Intro Section Spacing */
+.intro-section {
+    padding-bottom: 40px !important;
+    /* Force override section-item padding on PC */
+}
+
+@media (max-width: 768px) {
+    .intro-section {
+        padding-bottom: 42px !important;
+        /* Balanced with top padding */
+    }
+
+    .message-content h3 {
+        margin-bottom: 10px;
+        /* Reduced from 30px */
+    }
+}
+
+/* --- Academy Gallery Section --- */
+.gallery-section {
+    padding: 0 0 60px 0;
+    background-color: #fff;
+}
+
+.gallery-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 Columns */
+    gap: 5px;
+    /* 5px Gutter */
+}
+
+.gallery-item {
+    position: relative;
+    width: 100%;
+    /* Enforce 1:1 Aspect Ratio */
+    padding-bottom: 100%;
+    /* Square padding hack or use aspect-ratio */
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #f0f0f0;
+}
+
+.gallery-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .gallery-section {
+        padding: 42px 0;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 Columns on Mobile */
+    }
+}
+
+/* --- Lightbox Modal --- */
+.lightbox-modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(255, 255, 255, 0.98) !important;
+    /* Light background force */
+    align-items: flex-start !important;
+    /* Top aligned force */
+    justify-content: center;
+    padding-top: 20vh;
+    /* Space from top 20% */
+    animation: fadeIn 0.3s;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    color: #333 !important;
+    /* Dark color for visibility force */
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 10001;
+    line-height: 1;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* --- Mobile Scroll Indicator --- */
+/* --- Mobile Scroll Indicator --- */
+.mobile-scroll-indicator {
+    display: none;
+}
+
+/* -- New Mobile Circular Menu -- */
+.mobile-menu-container {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-scroll-nav {
+        display: none !important;
+        /* Force hide old menu */
+    }
+
+    /* Header adjustments for mobile */
+    .header-container {
+        justify-content: space-between;
+        /* Space out hamburger and logo */
+        padding: 0 15px;
+    }
+
+    .logo {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        margin-right: 40px;
+        /* Offset for hamburger to keep logo centered visually */
+    }
+
+    /* Hamburger Trigger */
+    .mobile-menu-container {
+        display: block;
+        position: relative;
+        z-index: 2000;
+    }
+
+    .menu-toggle {
+        width: 40px;
+        height: 40px;
+        border: none;
+        background: transparent;
+        color: #333;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        /* 우측 정렬 */
+        gap: 6px;
+        z-index: 2001;
+        padding: 8px;
+    }
+
+    /* 모던 햄버거 라인 */
+    .hamburger-line {
+        display: block;
+        height: 2px;
+        background-color: #333;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    .hamburger-line:nth-child(1) {
+        width: 24px;
+        /* 첫 번째 줄: 100% */
+    }
+
+    .hamburger-line:nth-child(2) {
+        width: 18px;
+        /* 두 번째 줄: 75% */
+    }
+
+    .hamburger-line:nth-child(3) {
+        width: 24px;
+        /* 세 번째 줄: 100% */
+    }
+
+    /* 메뉴 열렸을 때 X자로 변환 */
+    .menu-toggle.active .hamburger-line:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+        width: 24px;
+    }
+
+    .menu-toggle.active .hamburger-line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active .hamburger-line:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+        width: 24px;
+    }
+
+    /* Fan/Circular Menu Items */
+    .circular-menu-items {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        pointer-events: none;
+    }
+
+    .circular-menu-items.active {
+        pointer-events: auto;
+    }
+
+    .menu-item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transform: scale(0);
+        transform-origin: center;
+        transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s;
+        white-space: nowrap;
+        z-index: 10;
+        /* Fix centering */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        /* 20% increase from original 25px */
+        height: 30px;
+        pointer-events: none;
+        /* Disable clicks when closed */
+    }
+
+    .menu-item a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 30px;
+        height: 30px;
+        /* Glassmorphism effect */
+        background: rgba(26, 35, 126, 0.25);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 11px;
+        font-weight: 800;
+        border-radius: 50%;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15),
+            0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+        /* Subtle inner glow */
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        pointer-events: auto;
+        line-height: 1.1;
+    }
+
+    .menu-item a:hover {
+        background: rgba(33, 150, 243, 0.35);
+        /* Brighter glass on hover */
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        transform: scale(1.1);
+        box-shadow: 0 6px 16px rgba(33, 150, 243, 0.3),
+            0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    /* Active State for Menu Items */
+    .circular-menu-items.active .menu-item {
+        opacity: 1;
+        /* Fan out logic: Rotate Axis -> Move Out -> Rotate Item Back */
+        transform: rotate(calc(var(--angle) * 1deg)) translateX(var(--dist)) rotate(calc(var(--angle) * -1deg)) scale(1);
+    }
+
+    /* Sequential animation delays - 0.5s total for all 6 items */
+    .circular-menu-items.active .menu-item:nth-child(1) {
+        transition-delay: 0s;
+    }
+
+    .circular-menu-items.active .menu-item:nth-child(2) {
+        transition-delay: 0.1s;
+    }
+
+    .circular-menu-items.active .menu-item:nth-child(3) {
+        transition-delay: 0.2s;
+    }
+
+    .circular-menu-items.active .menu-item:nth-child(4) {
+        transition-delay: 0.3s;
+    }
+
+    .circular-menu-items.active .menu-item:nth-child(5) {
+        transition-delay: 0.4s;
+    }
+
+    .circular-menu-items.active .menu-item:nth-child(6) {
+        transition-delay: 0.5s;
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-scroll-indicator {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        bottom: -20px;
+        /* Adjusted slightly from 0px for better visibility */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 20;
+        pointer-events: none;
+        opacity: 0.95;
+    }
+
+    .mobile-scroll-indicator .scroll-text {
+        font-family: 'Gaegu', cursive;
+        font-size: 23px;
+        color: #FFD700;
+        /* Yellow */
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        margin-bottom: 2px;
+        /* Very close to hand below */
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        line-height: 1;
+    }
+
+    .mobile-scroll-indicator .scroll-hand {
+        font-size: 22px;
+        /* Reduced by ~30% from 32px */
+        animation: scrollBounce 2s infinite ease-in-out;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        margin-top: -13px;
+    }
+}
+
+@keyframes scrollBounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.6;
+    }
+
+    40% {
+        transform: translateY(6px);
+        opacity: 1;
+    }
+
+    60% {
+        transform: translateY(3px);
+        opacity: 0.8;
+    }
+}
+
+/* ============================================
+   Mobile Responsive - Universe Parallax Section
+   ============================================ */
+@media (max-width: 768px) {
+
+    /* 모바일에서도 배경 고정 시도 (일부 브라우저 지원) */
+    .universe-parallax-section {
+        background-attachment: fixed;
+        /* 모바일에서도 고정 시도 */
+        background-position: center center;
+        background-size: cover;
+        padding: 80px 0;
+        /* 모바일에서는 여백 줄임 */
+        min-height: 100vh;
+        /* 화면 전체 높이 확보 */
+    }
+
+    /* 모바일 그리드 조정 */
+    .edu-group {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .bottom-group {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+
+
+    /* 모바일에서 글래스 효과 울트라 강화 */
+    .glass-menu {
+        background: rgba(255, 255, 255, 0.45) !important;
+        backdrop-filter: blur(30px) saturate(200%) brightness(1.1);
+        -webkit-backdrop-filter: blur(30px) saturate(200%) brightness(1.1);
+        border: 2px solid rgba(255, 255, 255, 0.9);
+        box-shadow:
+            0 10px 30px 0 rgba(0, 0, 0, 0.5),
+            0 0 0 1px rgba(255, 255, 255, 0.4) inset;
+    }
+
+    .glass-menu:hover {
+        transform: translateY(-8px) scale(1.03);
+        background: rgba(255, 255, 255, 0.6) !important;
+        border: 2px solid rgba(255, 255, 255, 1);
+        box-shadow: 0 15px 45px 0 rgba(0, 0, 0, 0.6);
+    }
+}
+
+/* 떠오르는 애니메이션 (전역) */
+@keyframes fadeUpIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 작은 모바일 화면 */
+@media (max-width: 480px) {
+    .universe-parallax-section {
+        padding: 60px 0;
+    }
+
+    .quick-access-container {
+        margin: 40px auto 40px;
+        /* 위아래 균등하게 */
+    }
+
+    .bottom-group {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}
+
+/* ============================================
+   Premium Sticky Tabs Redesign
+   ============================================ */
+.side-sticky-menu {
+    position: fixed;
+    right: 3px;
+    /* 우측으로 약간 이동 */
+    bottom: 30px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sticky-tab {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+    position: relative;
+    overflow: hidden;
+}
+
+.tab-blog {
+    background: rgba(0, 200, 100, 0.15);
+    border: 1px solid rgba(0, 200, 100, 0.3);
+}
+
+.tab-call {
+    background: rgba(0, 120, 255, 0.15);
+    border: 1px solid rgba(0, 120, 255, 0.3);
+}
+
+.sticky-tab:hover {
+    transform: scale(1.1);
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+}
+
+.tab-blog:hover {
+    background: rgba(0, 200, 100, 0.25);
+    border-color: rgba(0, 200, 100, 0.5);
+}
+
+.tab-call:hover {
+    background: rgba(0, 120, 255, 0.25);
+    border-color: rgba(0, 120, 255, 0.5);
+}
+
+.tab-text {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile - Increase tab text size by 20% */
+@media (max-width: 768px) {
+    .tab-text {
+        font-size: 13px;
+        /* 20% increase from 11px */
+    }
+}

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./images/favicon.png">
+    <title>상승수학</title>
+
+    <link rel="stylesheet" href="styles.css?v=20251217">
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container header-container">
+            <!-- Mobile Circular Menu Trigger -->
+            <div class="mobile-menu-container">
+                <button class="menu-toggle" id="mobileMenuTrigger">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+                <div class="circular-menu-items" id="circularMenuItems">
+                    <div class="menu-item" style="--angle: 0; --dist: 90px;">
+                        <a href="director.html">원장<br>직강</a>
+                    </div>
+                    <div class="menu-item" style="--angle: 20; --dist: 95px;">
+                        <a href="nsu.html">재수<br>N수</a>
+                    </div>
+                    <div class="menu-item" style="--angle: 40; --dist: 100px;">
+                        <a href="high.html">고등부</a>
+                    </div>
+                    <div class="menu-item" style="--angle: 60; --dist: 100px;">
+                        <a href="middle.html">중등부</a>
+                    </div>
+                    <div class="menu-item" style="--angle: 80; --dist: 95px;">
+                        <a href="location.html">위치</a>
+                    </div>
+                    <div class="menu-item" style="--angle: 100; --dist: 90px;">
+                        <a href="#" onclick="openPricePopup(); return false;">공지</a>
+                    </div>
+                </div>
+            </div>
+
+            <h1 class="logo">
+                <a href="index.html">
+                    <img src="./images/logo_transparent.png" alt="상승수학">
+                </a>
+            </h1>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Overview</a></li>
+                    <li><a href="director.html">원장직강</a></li>
+                    <li><a href="nsu.html">재수•N수</a></li>
+                    <li><a href="high.html">고등부</a></li>
+                    <li><a href="middle.html">중등부</a></li>
+                    <li><a href="location.html">위치및약도</a></li>
+                    <li><a href="#" onclick="openPricePopup(); return false;">공지사항</a></li>
+                </ul>
+            </nav>
+            <div class="header-utils">
+                <a href="#" class="login-btn">로그인</a>
+            </div>
+        </div>
+        <nav class="mobile-scroll-nav">
+            <ul>
+                <li><a href="index.html" class="active">Overview</a></li>
+                <li><a href="director.html">원장직강</a></li>
+                <li><a href="nsu.html">재수•N수</a></li>
+                <li><a href="high.html">고등부</a></li>
+                <li><a href="middle.html">중등부</a></li>
+                <li><a href="location.html">위치및약도</a></li>
+                <li><a href="#" onclick="openPricePopup(); return false;">공지사항</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-carousel">
+            <div class="carousel-container">
+                <div class="carousel-slide active"
+                    style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('./images/slide1.webp');">
+                    <div class="container hero-content">
+                        <p class="subtitle fade-in">대치동<br>밀착형 관리수업의<br><span class="terminator-wrapper">표준<span
+                                    class="flying-dots"></span></span></p>
+                        <h2 class="title fade-in delay-1">대치동 상승수학</h2>
+                    </div>
+                </div>
+                <div class="carousel-slide"
+                    style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('./images/slide2.webp');">
+                    <div class="container hero-content">
+                        <p class="subtitle fade-in">前 대치동 가인아카데미,<br>前 수학의창의 원장출신의</p>
+                        <h2 class="title fade-in delay-1">원장직강수업</h2>
+                    </div>
+                </div>
+                <div class="carousel-slide"
+                    style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('./images/slide3.webp');">
+                    <div class="container hero-content">
+                        <p class="subtitle fade-in">개개인에 맞춰<br>최적의 솔루션을 제공하는</p>
+                        <h2 class="title fade-in delay-1">대치동 상승수학</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="prev-btn">&#10094;</button>
+                <div class="dots-container">
+                    <span class="dot active" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+                <button class="next-btn">&#10095;</button>
+            </div>
+            <!-- Dynamic Scroll Indicator for Mobile -->
+            <div class="mobile-scroll-indicator">
+                <span class="scroll-text">아래로 스크롤</span>
+                <div class="scroll-hand">👇</div>
+            </div>
+        </section>
+
+        <section class="section-item bg-soft-gray intro-section">
+            <div class="container">
+                <div class="message-content fade-up" style="text-align: center;">
+                    <h3>드디어 찾은<br>대치동 과외식 수업의 진수<br><span class="brand-name">상승수학</span></h3>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-item universe-parallax-section">
+            <div class="container">
+                <div class="quick-access-container" style="margin-top: 0; margin-bottom: 0;">
+                    <div class="quick-group edu-group">
+                        <a href="director.html" class="quick-menu-img-link hover-swap glass-menu" data-order="1">
+                            <img src="./images/menu_director.png" class="img-normal" alt="원장직강">
+                            <img src="./images/btn_director_hover.png" class="img-hover" alt="원장직강">
+                            <div class="glass-shine"></div>
+                        </a>
+                        <a href="nsu.html" class="quick-menu-img-link hover-swap glass-menu" data-order="2">
+                            <img src="./images/menu_nsu.png" class="img-normal" alt="재수·N수">
+                            <img src="./images/btn_nsu_hover.png" class="img-hover" alt="재수·N수">
+                            <div class="glass-shine"></div>
+                        </a>
+                        <a href="high.html" class="quick-menu-img-link hover-swap glass-menu" data-order="3">
+                            <img src="./images/menu_high.png" class="img-normal" alt="고등부">
+                            <img src="./images/btn_high_hover.png" class="img-hover" alt="고등부">
+                            <div class="glass-shine"></div>
+                        </a>
+                        <a href="middle.html" class="quick-menu-img-link hover-swap glass-menu" data-order="4">
+                            <img src="./images/menu_middle.png" class="img-normal" alt="중등부">
+                            <img src="./images/btn_middle_hover.png" class="img-hover" alt="중등부">
+                            <div class="glass-shine"></div>
+                        </a>
+                    </div>
+
+                    <div class="quick-group bottom-group">
+                        <a href="location.html" class="quick-menu-img-link hover-swap glass-menu" data-order="5">
+                            <img src="./images/quick_menu_location.png" class="img-normal" alt="위치">
+                            <img src="./images/btn_location_hover.png" class="img-hover" alt="위치">
+                            <div class="glass-shine"></div>
+                        </a>
+                        <a href="https://blog.naver.com/wmath577" target="_blank"
+                            class="quick-menu-img-link btn-blog hover-swap glass-menu" data-order="6">
+                            <img src="./images/quick_menu_blog.png" class="img-normal" alt="블로그 바로가기">
+                            <img src="./images/btn_blog_hover.png" class="img-hover" alt="블로그 바로가기">
+                            <div class="glass-shine"></div>
+                        </a>
+                        <a href="tel:025771777" class="quick-menu-img-link hover-swap glass-menu" data-order="7">
+                            <img src="./images/quick_menu_phone.png" class="img-normal" alt="상담전화">
+                            <img src="./images/btn_phone_hover.png" class="img-hover" alt="상담전화">
+                            <div class="glass-shine"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-item bg-soft-gray">
+            <div class="container">
+                <div class="content text-container" style="text-align: center;">
+                    <div class="philosophy">
+                        <p class="primary-msg">상승수학은 학생에게 <strong>진심</strong>입니다.</p>
+                        <p class="secondary-msg">오직 학생의 성적향상만을 고민합니다.</p>
+
+                        <div class="questions">
+                            <p class="keep-all">"이 친구에게는 어떤 교재가 잘 맞을까?"</p>
+                            <p class="keep-all">"이 친구에게는 어떤 자극을 줘야 할까?"</p>
+                            <p class="keep-all">"이 친구의 성적향상 장애요인이 뭘까?"</p>
+                        </div>
+
+                        <p class="final-msg">
+                            학생에 대해 진심으로 고민하고<br>
+                            최적의 솔루션을 제공합니다.<br><br>
+                            학생에 진심인 학원, 상승수학과 함께<br>
+                            <strong>꼭 성적역전 하세요!!</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="gallery-section">
+        <div class="gallery-container">
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="./images/academy/gallery_101.webp" loading="lazy" alt="Gallery 101">
+                </div>
+                <div class="gallery-item"><img src="./images/academy/gallery_102.webp" loading="lazy" alt="Gallery 102">
+                </div>
+                <div class="gallery-item"><img src="./images/academy/gallery_103.webp" loading="lazy" alt="Gallery 103">
+                </div>
+                <div class="gallery-item"><img src="./images/academy/gallery_104.webp" loading="lazy" alt="Gallery 104">
+                </div>
+                <div class="gallery-item"><img src="./images/academy/gallery_105.webp" loading="lazy" alt="Gallery 105">
+                </div>
+                <div class="gallery-item"><img src="./images/academy/gallery_106.webp" loading="lazy" alt="Gallery 106">
+                </div>
+                <div class="gallery-item"><img src="./images/academy/gallery_107.webp" loading="lazy" alt="Gallery 107">
+                </div>
+                <div class="gallery-item"><img src="./images/academy/gallery_108.webp" loading="lazy" alt="Gallery 108">
+                </div>
+                <div class="gallery-item"><img src="./images/academy/gallery_109.webp" loading="lazy" alt="Gallery 109">
+                </div>
+                <div class="gallery-item"><img src="./images/academy/gallery_110.webp" loading="lazy" alt="Gallery 110">
+                </div>
+                <div class="gallery-item"><img src="./images/academy/gallery_111.webp" loading="lazy" alt="Gallery 111">
+                </div>
+                <div class="gallery-item"><img src="./images/academy/gallery_112.webp" loading="lazy" alt="Gallery 112">
+                </div>
+                <div class="gallery-item"><img src="./images/academy/gallery_113.webp" loading="lazy" alt="Gallery 113">
+                </div>
+                <div class="gallery-item"><img src="./images/academy/gallery_114.webp" loading="lazy" alt="Gallery 114">
+                </div>
+                <div class="gallery-item"><img src="./images/academy/gallery_115.webp" loading="lazy" alt="Gallery 115">
+                </div>
+                <div class="gallery-item"><img src="./images/academy/gallery_116.webp" loading="lazy" alt="Gallery 116">
+                </div>
+                <div class="gallery-item"><img src="./images/academy/gallery_117.webp" loading="lazy" alt="Gallery 117">
+                </div>
+                <div class="gallery-item"><img src="./images/academy/gallery_118.webp" loading="lazy" alt="Gallery 118">
+                </div>
+                <div class="gallery-item"><img src="./images/academy/gallery_119.webp" loading="lazy" alt="Gallery 119">
+                </div>
+                <div class="gallery-item"><img src="./images/academy/gallery_120.webp" loading="lazy" alt="Gallery 120">
+                </div>
+                <div class="gallery-item"><img src="./images/academy/gallery_121.webp" loading="lazy" alt="Gallery 121">
+                </div>
+                <div class="gallery-item"><img src="./images/academy/gallery_122.webp" loading="lazy" alt="Gallery 122">
+                </div>
+                <div class="gallery-item"><img src="./images/academy/gallery_123.webp" loading="lazy" alt="Gallery 123">
+                </div>
+                <div class="gallery-item"><img src="./images/academy/gallery_124.webp" loading="lazy" alt="Gallery 124">
+                </div>
+                <div class="gallery-item"><img src="./images/academy/gallery_125.webp" loading="lazy" alt="Gallery 125">
+                </div>
+                <div class="gallery-item"><img src="./images/academy/gallery_126.webp" loading="lazy" alt="Gallery 126">
+                </div>
+                <div class="gallery-item"><img src="./images/academy/gallery_127.webp" loading="lazy" alt="Gallery 127">
+                </div>
+                <div class="gallery-item"><img src="./images/academy/gallery_128.webp" loading="lazy" alt="Gallery 128">
+                </div>
+                <div class="gallery-item"><img src="./images/academy/gallery_129.webp" loading="lazy" alt="Gallery 129">
+                </div>
+                <div class="gallery-item"><img src="./images/academy/gallery_130.webp" loading="lazy" alt="Gallery 130">
+                </div>
+                <div class="gallery-item"><img src="./images/academy/gallery_131.webp" loading="lazy" alt="Gallery 131">
+                </div>
+                <div class="gallery-item"><img src="./images/academy/gallery_132.webp" loading="lazy" alt="Gallery 132">
+                </div>
+                <div class="gallery-item"><img src="./images/academy/gallery_133.webp" loading="lazy" alt="Gallery 133">
+                </div>
+                <div class="gallery-item" id="price-item"><img src="./images/academy/200_price.webp" loading="lazy"
+                        alt="수강료 안내"></div>
+            </div>
+        </div>
+    </section>
+
+    <div id="lightbox" class="lightbox-modal">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-links">
+                <a href="#">이용약관</a>
+                <a href="#">개인정보처리방침</a>
+            </div>
+            <div class="footer-info">
+                <p>우편번호 06197 서울특별시 강남구 대치동 906-20 화남빌딩 7층</p>
+                <p>전화 02.577.1777 <span class="divider">|</span> e-mail imp7282@naver.com</p>
+                <p>
+                    <span>사업자등록번호 320-96-01774</span> <span class="divider">|</span>
+                    <span>학원설립운영등록번호 12986</span> <span class="mobile-break"><br></span>
+                    <span class="desktop-divider">|</span> <span>대표자 권신영</span>
+                </p>
+            </div>
+            <p class="copyright">Copyright © 2024 상승수학. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="side-sticky-menu">
+        <a href="https://blog.naver.com/wmath577" target="_blank" class="sticky-tab tab-blog">
+            <span class="tab-text">BLOG</span>
+        </a>
+        <a href="tel:025771777" class="sticky-tab tab-call">
+            <span class="tab-text">CALL</span>
+        </a>
+    </div>
+
+    <script src="js/app.js?v=fix2"></script>
+
+    <script>
+        function openPricePopup() {
+            var modal = document.getElementById("lightbox");
+            var modalImg = document.getElementById("lightbox-img");
+
+            modalImg.src = "./images/academy/200_price.webp";
+            modal.style.display = "flex";
+            modal.style.zIndex = "9999";
+
+            var span = document.getElementsByClassName("lightbox-close")[0];
+            if (span) {
+                span.onclick = function () {
+                    modal.style.display = "none";
+                }
+            }
+            modal.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

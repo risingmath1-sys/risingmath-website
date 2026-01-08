@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./images/favicon.png">
+    <title>재수 · N수 - 상승수학</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container header-container">
+            <!-- Mobile Circular Menu Trigger -->
+            <div class="mobile-menu-container">
+                <button class="menu-toggle" id="mobileMenuTrigger">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+                <div class="circular-menu-items" id="circularMenuItems">
+                    <div class="menu-item" style="--angle: 0; --dist: 90px;">
+                        <a href="director.html">원장<br>직강</a>
+                    </div>
+                    <div class="menu-item" style="--angle: 20; --dist: 95px;">
+                        <a href="nsu.html">재수<br>N수</a>
+                    </div>
+                    <div class="menu-item" style="--angle: 40; --dist: 100px;">
+                        <a href="high.html">고등부</a>
+                    </div>
+                    <div class="menu-item" style="--angle: 60; --dist: 100px;">
+                        <a href="middle.html">중등부</a>
+                    </div>
+                    <div class="menu-item" style="--angle: 80; --dist: 95px;">
+                        <a href="location.html">위치</a>
+                    </div>
+                    <div class="menu-item" style="--angle: 100; --dist: 90px;">
+                        <a href="#" onclick="openPricePopup(); return false;">공지</a>
+                    </div>
+                </div>
+            </div>
+
+            <h1 class="logo">
+                <a href="index.html">
+                    <img src="./images/logo_transparent.png" alt="상승수학">
+                </a>
+            </h1>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Overview</a></li>
+                    <li><a href="director.html">원장직강</a></li>
+                    <li><a href="nsu.html">재수•N수</a></li>
+                    <li><a href="high.html">고등부</a></li>
+                    <li><a href="middle.html">중등부</a></li>
+                    <li><a href="location.html">위치및약도</a></li>
+                    <li><a href="#" onclick="openPricePopup(); return false;">공지사항</a></li>
+                </ul>
+            </nav>
+            <div class="header-utils">
+                <a href="#" class="login-btn">로그인</a>
+            </div>
+        </div>
+        <!-- Mobile Horizontal Scroll Menu -->
+        <nav class="mobile-scroll-nav">
+            <ul>
+                <li><a href="index.html">Overview</a></li>
+                <li><a href="director.html">원장직강</a></li>
+                <li><a href="nsu.html" class="active">재수•N수</a></li>
+                <li><a href="high.html">고등부</a></li>
+                <li><a href="middle.html">중등부</a></li>
+                <li><a href="location.html">위치및약도</a></li>
+                <li><a href="#" onclick="openPricePopup(); return false;">공지사항</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="padding-top: 50px; min-height: 60vh;">
+        <!-- Section 1: Intro & Title -->
+        <section class="section-item bg-soft-blue">
+            <div class="container">
+                <div class="section-title-wrapper">
+                    <h2 style="font-size: 32px; font-weight: 700; margin: 0;">재수•N수</h2>
+                </div>
+                <div class="content opacity-load text-container">
+                    <blockquote
+                        style="font-size: 22px; border-left: 4px solid #000; padding-left: 20px; margin: 0; font-weight: 600; line-height: 1.5;">
+                        "지난 1년의 실패, 공부가 부족해서가 아닙니다.<br>방법이 틀렸기 때문입니다."
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Methodology Difference -->
+        <section class="section-item bg-soft-blue">
+            <div class="container">
+                <div class="content opacity-load text-container">
+                    <h3
+                        style="margin-top: 40px; font-size: 24px; font-weight: 700; color: #0044cc; margin-bottom: 20px;">
+                        1. 등급은 다른데, 공부는 똑같이 하십니까?</h3>
+                    <p style="line-height: 1.8; margin-bottom: 30px;">
+                        상승수학은 20년의 경험으로 알고 있습니다. 4등급 학생과 2등급 학생의 공부법은 완전히 달라야 합니다. 3등급까지는 이해에 기반한 기출 분석과 철저한 오답공부가,
+                        2등급부터는 준킬러를 킬링할 수 있는 수학적 사고력을 키우는 훈련이 필요합니다. <strong>상승수학은 당신의 현재 위치에서 1등급으로 가는 가장 빠르고 확실한
+                            길을 제시합니다.</strong>
+                    </p>
+
+                    <h3
+                        style="margin-top: 40px; font-size: 24px; font-weight: 700; color: #0044cc; margin-bottom: 20px;">
+                        2. 당신의
+                        오답 노트는, 진짜 '오답' 노트입니까?</h3>
+                    <p style="line-height: 1.8; margin-bottom: 30px;">
+                        틀린 문제의 답을 기억하는 것은 공부의 착각일 뿐입니다. 상승수학의 오답은 다릅니다. 우리는 '왜 틀렸는가'를 파고들어 문제에 숨겨진 '핵심 포인트'와 '출제 의도'를
+                        꿰뚫어 보는 훈련을 합니다. 틀린 문제를 단순히 반복해 푸는 것은 진짜 오답이 아닙니다.
+                    </p>
+
+                    <div
+                        style="font-size: 20px; font-weight: 700; text-align: center; margin: 40px 0 0; padding: 30px; background-color: #0052cc; color: #fff; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,82,204,0.2);">
+                        상승수학에서의 1년은<br> 당신의 마지막 수험생활이 될 것입니다.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Class Schedule -->
+        <section class="section-item bg-soft-gray">
+            <div class="container">
+                <div class="content opacity-load text-container">
+                    <div
+                        style="background-color: #fff; padding: 40px; border-radius: 12px; border: 1px solid #eee; margin-bottom: 0;">
+                        <h4
+                            style="font-size: 22px; border-bottom: 2px solid #333; padding-bottom: 15px; margin-bottom: 25px; font-weight: 700;">
+                            [재수/N수반 수업 시간 안내]
+                        </h4>
+                        <ul style="list-style: none; padding-left: 0; line-height: 2; font-size: 17px;">
+                            <li><strong>◼ 운영 시간:</strong> 평일 오후 1시 ~ 오후 10시</li>
+                            <li><strong>◼ 수업 형태:</strong> 4시간 집중 관리 수업</li>
+                            <li><strong>◼ 특징:</strong> 원하는 시작 시간을 1시간 단위로 유연하게 선택할 수 있습니다.<br>
+                                <span style="font-size: 15px; color: #666; display: block; margin-top: 5px;">(예: 1시 시작반,
+                                    2시 시작반, 3시 시작반...)</span>
+                            </li>
+                            <li style="margin-top: 15px; color: #d32f2f; font-weight: 500;">※ 자세한 시간표는 상담 시 개별적으로 조율하여
+                                확정합니다.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Success Story (White) -->
+        <section class="section-item bg-white">
+            <div class="container">
+                <div class="content opacity-load text-container">
+                    <div class="section-title-wrapper"
+                        style="border-bottom: 2px solid #000; padding-bottom: 20px; margin-bottom: 50px;">
+                        <h3 class="" style="font-size: 26px; word-break: keep-all; font-weight: 700; margin: 0;">
+                            [재수 성공기] <br class="mobile-only"><span style="font-weight: 500;">점수가 아니라 '사고의 깊이'를 채운 1년의
+                                기록</span>
+                        </h3>
+                    </div>
+
+                    <div
+                        style="background-color: #f8fbff; padding: 40px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); margin-bottom: 50px; border: 1px solid #eef4fc;">
+                        <p style="line-height: 1.8; margin-bottom: 20px;">
+                            "저는 진짜 아무 생각없이 문제만 많이 풀었습니다. 재수를 시작하며, 저는 작년보다 더 많은 문제를 풀면 당연히 성적이 오를 거라 믿었습니다. 책상에 쌓여가는
+                            문제집만큼 제 실력도 쌓이고 있다고 착각했죠."
+                        </p>
+                        <p style="line-height: 1.8; margin-bottom: 20px;">
+                            "상승수학에 온지 일주일쯤 지났을 때, 일주일 전에 나온 개념을 기억못한다고 원장님께 혼쭐이 났습니다. 그리고 오답공부가 중요한 지 알면서도, 왜 실패했는지,
+                            어떻게 오답공부를 해야 효과적인지, 오답공부에 대한 원장님의 열변을 들어야 했습니다."
+                        </p>
+                        <p style="line-height: 1.8; margin-bottom: 20px;">
+                            "그날부터 제 공부는 양이 아닌 깊이로 바뀌었습니다. 새 문제집을 푸는 대신, 틀렸던 문제 하나에 담긴 '개념'과 '조건'을 파고들었습니다. 왜 틀렸는지,
+                            출제자는 무엇을 묻고 싶었는지. 그렇게 한 달쯤 지났을 때, 처음으로 수학 문제들이 서로 연결되어 보이기 시작했습니다. 성적은 자연스럽게 따라왔습니다.
+                            <strong>상승수학은 제게 '진짜 공부'가 무엇인지 알려준 곳입니다.</strong>"
+                        </p>
+                    </div>
+
+                    <div style="background-color: #2c3e50; padding: 30px; border-radius: 12px; color: #fff;">
+                        <h5
+                            style="font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 10px;">
+                            👨‍🏫 원장 코멘트
+                        </h5>
+                        <p style="line-height: 1.7; font-size: 16px; margin-bottom: 0; color: #ececec;">
+                            이 학생은 잠재력이 매우 우수한 학생이었습니다. 하지만 '많이 풀면 된다'는 잘못된 공부 습관에 갇혀, 자신의 약점을 들여다볼 기회를 갖지 못하고
+                            있었습니다. 우선, '왜 틀리는지'를 스스로 분석하게 하는 철저한 오답 시스템으로 잘못된 습관을 교정하자, 성적은 4등급에서 2등급까지 수직으로 상승했습니다.
+                            <br><br>
+                            2등급부터는 또 다른 싸움입니다. 이때부터는 학생 수준에 맞는 준킬러 문제를 20분 이상 깊이 있게 사고하는 훈련을 통해, 어떤 변형 문제에도 흔들리지 않는
+                            단단한 '수학적 체력'을 길렀습니다. <strong>올바른 진단과 정확한 처방만 있다면, 성적 역전은 “나”에게도 가능합니다.</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-links">
+                <a href="#">이용약관</a>
+                <a href="#">개인정보처리방침</a>
+            </div>
+            <div class="footer-info">
+                <p>우편번호 06197 서울특별시 강남구 대치동 906-20 화남빌딩 7층</p>
+                <p>전화 02.577.1777 | e-mail imp7282@naver.com</p>
+                <p>사업자등록번호 320-96-01774 | 학원설립운영등록번호 12986 | 대표자 권신영</p>
+            </div>
+            <p class="copyright">Copyright © 2024 상승수학. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="side-sticky-menu">
+        <a href="https://blog.naver.com/wmath577" target="_blank" class="sticky-tab tab-blog">
+            <span class="tab-text">BLOG</span>
+        </a>
+        <a href="tel:025771777" class="sticky-tab tab-call">
+            <span class="tab-text">CALL</span>
+        </a>
+    </div>
+
+    <script src="js/app.js?v=fix2"></script>
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox-modal">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <script>
+        function openPricePopup() {
+            var modal = document.getElementById("lightbox");
+            var modalImg = document.getElementById("lightbox-img");
+
+            // 이미지 경로 설정
+            modalImg.src = "./images/academy/200_price.webp";
+
+            // 팝업 강제 표시
+            modal.style.display = "flex";
+            modal.style.zIndex = "9999";
+
+            // 닫기 버튼 연결
+            var span = document.getElementsByClassName("lightbox-close")[0];
+            if (span) {
+                span.onclick = function () {
+                    modal.style.display = "none";
+                }
+            }
+
+            // 배경 클릭 시 닫기
+            modal.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
