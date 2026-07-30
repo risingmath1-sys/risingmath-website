@@ -1,0 +1,55 @@
+# 상승수학학원 (risingmath.kr) robots.txt
+# 일반 검색엔진 + 생성형 AI 검색(GEO) 크롤러 명시 허용
+
+# --- 생성형 AI / LLM 검색 크롤러 ---
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# --- 일반 검색엔진 ---
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Yeti
+Allow: /
+
+# --- 그 외 모든 크롤러 ---
+User-agent: *
+Allow: /
+
+Sitemap: https://risingmath.kr/sitemap.xml
