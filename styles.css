@@ -1939,3 +1939,31 @@ font-size controls size */
         /* 20% increase from 11px */
     }
 }
+
+/* Desktop nav: pull menu toward the logo (slightly left) */
+.header-container > nav {
+    margin-right: auto;
+    margin-left: 40px;
+}
+
+/* Learning report / document pages: clear the fixed header + breathing room */
+.report-main {
+    padding-top: 100px;
+    /* fixed header is 80px on desktop */
+    padding-bottom: 72px;
+    min-height: 60vh;
+}
+
+@media (max-width: 768px) {
+    /* mobile header is 50px */
+    .report-main {
+        padding-top: 66px;
+        padding-bottom: 48px;
+    }
+
+    /* neutralize desktop nav margins on mobile (nav-menu is hidden) */
+    .header-container > nav {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
