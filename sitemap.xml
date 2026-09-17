@@ -49,6 +49,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://risingmath.kr/process.html</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://risingmath.kr/journal.html</loc>
     <lastmod>2026-09-17</lastmod>
     <changefreq>weekly</changefreq>
