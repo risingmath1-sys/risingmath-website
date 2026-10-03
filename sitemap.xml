@@ -56,9 +56,15 @@
   </url>
   <url>
     <loc>https://risingmath.kr/journal.html</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://risingmath.kr/journal-jamsil-gongsu2.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://risingmath.kr/journal-dandaebu3.html</loc>
